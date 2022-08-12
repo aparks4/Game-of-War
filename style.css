@@ -1,8 +1,12 @@
 body {
-    background: url(https://i.imgur.com/IV13aRV.jpghttps://i.imgur.com/E6lbGD5.jpg);
+    background: url(https://i.imgur.com/E6lbGD5.jpghttps://i.imgur.com/26awOKV.jpg);
     font-family: 'Gloria Hallelujah', cursive;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 150px;
+    margin-top: 25px;
 }
-
 .title-section {
     display: flex;
     flex-direction: column;
@@ -20,126 +24,94 @@ h1 {
 .text-banner {
     display: flex;
     justify-content: center;
+    border: solid;
+    width: 600px;
+    height: 60px;
+    font-size: 28px;
+    margin-top: 40px;
+    align-self: center;
 }
-h2 {
-    text-align: center;
+.board-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+}
+.cards-C, .cards-P {
+    position: absolute;
+    width: 16em;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;  
+}
+.cards-P {
+    align-self: flex-end;
+}
+.flip-1, .flip-2, .flip-3, .flip-4, .flip-5, .flip-6 {
+    height: 132px; 
+    width: 100px;
+    border-radius: 10%;
+    background-color: #b2b2b2;
 }
 .board {
     display: flex;
     justify-content: center;
-    margin-bottom: 5px;
+    flex-direction: row;
+    align-items: flex-start;
+    margin-top: 0px;
+    width: 700px;
+
 }
-.computer {
-    display: inline-flex;
+.computer, .player {
     flex-direction: column;
     justify-content: center;
     align-items: center;
     align-self: center;
     text-align: center;
-    margin-top: 5px;
-    height: 400px;
+    font-size: 23px;
+    height: 300px;
     width: 300px;
-    
-}
-.comp-card {
-    border: solid;
-    height: 150px;
-    width: 100px;
-}
-.player {
-    display: inline-flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    align-self: center;
-    text-align: center;
-    margin-top: 5px;
-    height: 400px;
-    width: 300px;
-}
-.player-card {
-    border: solid;
-    height: 150px;
-    width: 100px;
+    margin-top: 50px;
 }
 .button-wrapper {
     display: flex;
     justify-content: center;
     align-content: center;
+    margin-top: 30px;
+    font-family: 'Gloria Hallelujah', cursive;
 }
-.shuffle-button {
+.shuffle-button, .war-button, .tie-button, .reset-button {
     justify-content: center;
     align-self: center;
-    height: 35px;
-    width: 80px;
+    height: 60px;
+    width: 150px;
     text-align: center;
+    font-family: 'Gloria Hallelujah', cursive;
+    font-weight: bold;
+    font-size: 18px;
     margin-left: 12px;
-}
-.war-button {
-    height: 40px;
-    width: 60px;
-    font-size: 15px;
-    text-align: center;
-    margin-top: 0px;
-    margin-left: 10px;
-    align-self: center;
-    background-color:
-}
-.tie-button {
-    height: 30px;
-    width: 80px;
-    font-size: 15px;
-    text-align: center;
-    margin-top: 0px;
-    align-self: center;
-}
-.reset-button {
-    height: 40px;
-    width: 80px;
-    font-size: 15px;
-    text-align: center;
-    margin-top: 0px;
-    align-self: center;
-    margin-right: 10px;
+    border-radius: 12px;
+    background-color: #b2b2b2
 }
 .stats {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-top: 5px;
-   
+    justify-content: center;  
 }
-.c-stats {
-    display: flex;
-    justify-content: flex-start;
-    border: solid;
-    height: 100px;
-    width: 300px;
-}
-.p-stats {
-    display: flex;
-    justify-content: flex-start;
-    border: solid;
-    height: 100px;
-    width: 300px;
-
-}
-ul {
-    list-style-type: none;
-}
-li {
-    justify-content: center;
-    text-align: flex
-}
-
-/* Cards */
-.table-P .table-C {
+.c-stats, .p-stats {
     display: flex;
     justify-content: center;
+    font-size: 25px;
+    width: 300px;
+}
+.table-P, .table-C {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
+    align-self: center;
 }
 .card {
-    /* background-image: url("graphics/cardback.gif"); */
     border-color: #808080 #000000 #000000 #808080;
     background-color: white;
     border-width: 1px;
@@ -160,19 +132,16 @@ li {
     width: 100%;
     height: 100%;
 }
-.red { 
-    color: #ff0000; 
-}
 .top {
     position: absolute;
-    top: 0.15em;
+    top: 0;
     left: 0.15em;
     text-align: center;
 }
 .right {
     position: absolute;
     right: 0.15em;
-    bottom: 0.15em;
+    bottom: 0;
     text-align: center;
 }
 .suit {
@@ -181,6 +150,6 @@ li {
     text-align: center;
     align-self: center;
     align-items: space-between;
-    bottom: .05em;  
+    bottom: .095em;  
 }
 

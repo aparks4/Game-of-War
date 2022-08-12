@@ -50,7 +50,7 @@ cStats.innerText = 'Cards in hand: ' + computer.length;
 pStats.innerText = 'Cards in hand: ' + player.length;
 
 let banner = document.querySelector('.text-banner');
-banner.innerText = 'let`s get started...';
+banner.innerText = 'shuffle to begin...';
 
 // functions
 
@@ -105,7 +105,7 @@ function tieBreaker() {
             computer = [];
             tieBtn.style.display = 'none';
             warBtn.style.display = 'inline';
-        } else { //(if computer[0].points === player[3].points)
+        } else { 
             winnerArray.push(player[0], player[1], player[2], player[3]);
             player = player.slice(4);
             roundWinner();
@@ -131,7 +131,7 @@ function tieBreaker() {
             player = [];
             tieBtn.style.display = 'none';
             warBtn.style.display = 'inline';
-        } else { //(if player[0].points === computer[3].points)
+        } else {
             winnerArray.push(computer[0], computer[1], computer[2], computer[3]);
             computer = computer.slice(4);
             roundWinner();
@@ -148,6 +148,7 @@ function roundWinner() {
             computer.push(player[0], player[1], player[2], player[3]);
             player = player.slice(4);
             winnerName = 'Computer';
+            banner.innerText = 'Computer wins!'
         } else if (computer[3].points < player[3].points) {
             for (let i=0; i < 4; i++) {
                 player.push(player.shift())
@@ -155,6 +156,7 @@ function roundWinner() {
             player.push(computer[0], computer[1], computer[2], computer[3]);
             computer = computer.slice(4);
             winnerName = 'Player';
+            banner.innerText = 'Player wins!';
         } else {
             warBtn.style.display = 'none';
             tieBtn.style.display = 'inline';
@@ -169,6 +171,7 @@ function roundWinner() {
             };
             player = player.slice(4);
             winnerName = 'Computer';
+            banner.innerText = 'Computer wins!'
         } else if (computer[a].points < player[3].points) {
             for (let i = 0; i < 4; i++) {
                 player.push(player.shift())
@@ -176,6 +179,7 @@ function roundWinner() {
             player.push(...computer);
             computer = [];
             winnerName = 'Player';
+            banner.innerText = 'Player wins!';
         } else {
             warBtn.style.display = 'none';
             tieBtn.style.display = 'inline';
@@ -190,6 +194,7 @@ function roundWinner() {
             };
             computer = computer.slice(4);
             winnerName = 'Player';
+            banner.innerText = 'Player wins!';
         } else if (player[a].points < computer[3].points) {
             for (let i = 0; i < 4; i++) {
                 computer.push(computer.shift())
@@ -197,6 +202,7 @@ function roundWinner() {
             computer.push(...player);
             player = [];
             winnerName = 'Computer';
+            banner.innerText = 'Computer wins!'
         } else {
             warBtn.style.display = 'none';
             tieBtn.style.display = 'inline';
@@ -224,7 +230,6 @@ function renderCard(item) {
 }
 
 
-// add event listeners
 shuffleBtn.addEventListener('click', () => {
     let deck = new Deck;
     deck.createDeck();
@@ -233,11 +238,13 @@ shuffleBtn.addEventListener('click', () => {
             if (i % 2 === 0) player.push(deck.cards[i]);
             else computer.push(deck.cards[i]);
         }
-        console.log(player, computer);
         shuffleBtn.style.display = 'none';
         warBtn.style.display = 'inline';
         banner.innerText = '';
+        cStats.innerText = 'Cards in hand: ' + computer.length;
+        pStats.innerText = 'Cards in hand: ' + player.length;
 });
+
 
 warBtn.addEventListener('click', (e) => {
     tableC.firstElementChild.remove();
@@ -255,8 +262,6 @@ warBtn.addEventListener('click', (e) => {
         tableP.appendChild(renderCard(player[a]));
     };
     roundWinner();
-    console.log(computer);
-    console.log(player);
     cStats.innerText = 'Cards in hand: ' + computer.length;
     pStats.innerText = 'Cards in hand: ' + player.length;
     checkWin();
@@ -278,8 +283,6 @@ tieBtn.addEventListener('click', (e) => {
         tableP.appendChild(renderCard(player[a]));
     };
     tieBreaker();
-    console.log(computer);
-    console.log(player);
     cStats.innerText = 'Cards in hand: ' + computer.length;
     pStats.innerText = 'Cards in hand: ' + player.length;
     checkWin();
@@ -288,13 +291,14 @@ tieBtn.addEventListener('click', (e) => {
 resetBtn.addEventListener('click', (e) => {
     player = [];
     computer = [];
+    cStats.innerText = 'Cards in hand: ' + computer.length;
+    pStats.innerText = 'Cards in hand: ' + player.length;
     resetBtn.style.display = 'none';
     shuffleBtn.style.display = 'inline';
     tableC.firstElementChild.remove();
     tableP.firstElementChild.remove();
     tableC.appendChild(document.createElement('div'));
     tableP.appendChild(document.createElement('div'));
-    console.clear();
-    banner.innerText = '';
+    banner.innerText = 'let`s get started...';
 })
 
