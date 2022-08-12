@@ -1,4 +1,3 @@
-// classes and variables
 class Card {
     constructor(suit, value, points) {
         this.value = value;
@@ -28,8 +27,6 @@ let computer = [];
 let winnerName = '';
 let winnerArray = [];
 
-
-// get dom items
 const shuffleBtn = document.querySelector('.shuffle-button');
 
 const warBtn = document.querySelector('.war-button');
@@ -51,8 +48,6 @@ pStats.innerText = 'Cards in hand: ' + player.length;
 
 let banner = document.querySelector('.text-banner');
 banner.innerText = 'shuffle to begin...';
-
-// functions
 
 function checkWin() {
     if (computer.length === 0 || player.length === 0) {
@@ -229,7 +224,6 @@ function renderCard(item) {
     return cardDrawn;
 }
 
-
 shuffleBtn.addEventListener('click', () => {
     let deck = new Deck;
     deck.createDeck();
@@ -244,7 +238,6 @@ shuffleBtn.addEventListener('click', () => {
         cStats.innerText = 'Cards in hand: ' + computer.length;
         pStats.innerText = 'Cards in hand: ' + player.length;
 });
-
 
 warBtn.addEventListener('click', (e) => {
     tableC.firstElementChild.remove();
