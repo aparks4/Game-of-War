@@ -55,13 +55,6 @@ h1 {
     align-self: flex-end;
 }
 
-.flip-1, .flip-2, .flip-3, .flip-4, .flip-5, .flip-6 {
-    height: 132px; 
-    width: 100px;
-    border-radius: 10%;
-    background-color: #b2b2b2;
-}
-
 .board {
     display: flex;
     justify-content: center;
