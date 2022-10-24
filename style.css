@@ -1,6 +1,9 @@
 body {
     background: url(https://i.imgur.com/E6lbGD5.jpghttps://i.imgur.com/26awOKV.jpg);
     font-family: 'Gloria Hallelujah', cursive, sans-serif;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -43,12 +46,16 @@ h1 {
 
 .cards-C, .cards-P {
     position: absolute;
+    border: solid;
     width: 16em;
     height: 500px;
-    display: flex;
+    /* display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: center;  
+    align-items: center;   */
+    display: grid;
+    grid-template-columns: 4fr;
+    grid-template-rows: 13fr;
 }
 
 .cards-P {

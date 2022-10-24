@@ -70,15 +70,12 @@ function tieBreaker() {
         roundWinner();
         if (winnerName === 'Computer') {
             computer.push(...winnerArray);
-            winnerArray = [];
-            tieBtn.style.display = 'none';
-            warBtn.style.display = 'inline';
-        }else if (winnerName === 'Player') {
+        }else {
             player.push(...winnerArray);
-            winnerArray = [];
-            tieBtn.style.display = 'none';
-            warBtn.style.display = 'inline';
-        };
+        }  
+        winnerArray = [];
+        tieBtn.style.display = 'none';
+        warBtn.style.display = 'inline';
     } else if (computer.length < 4) {
         let a = computer.length - 1;
         for (i = 0; i < a; i++) {
