@@ -1,7 +1,7 @@
 body {
     background: url(https://i.imgur.com/E6lbGD5.jpghttps://i.imgur.com/26awOKV.jpg);
     font-family: 'Gloria Hallelujah', cursive, sans-serif;
-    background-size: cover;
+    background-size: auto;
     background-position: center;
     background-repeat: no-repeat;
     display: flex;
