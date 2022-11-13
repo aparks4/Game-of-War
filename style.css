@@ -30,7 +30,6 @@ h1 {
 .text-banner {
     display: flex;
     justify-content: center;
-    border: solid;
     width: 600px;
     height: 60px;
     font-size: 28px;
@@ -46,7 +45,6 @@ h1 {
 
 .cards-C, .cards-P {
     position: absolute;
-    border: solid;
     width: 16em;
     height: 500px;
     /* display: flex;
