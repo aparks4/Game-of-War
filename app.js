@@ -49,18 +49,13 @@ pStats.innerText = 'Cards in hand: ' + player.length;
 let banner = document.querySelector('.text-banner');
 banner.innerText = 'shuffle to begin...';
 
-const pCrown = document.querySelector('#p-crown');
-pCrown.style.visibility = 'hidden';
-const cCrown = document.querySelector('#c-crown');
-cCrown.style.visibility = 'hidden';
-
 function checkWin() {
     if (computer.length === 0 || player.length === 0) {
         warBtn.style.display = 'none';
         if (computer.length === 0) {
-            banner.innerText = 'GAME OVER, PLAYER WINS!'
+            banner.innerText = 'GAME OVER, PLAYER WINS!!!'
         } else if (player.length === 0) {
-            banner.innerText = 'GAME OVER, COMPUTER WINS!'
+            banner.innerText = 'GAME OVER, COMPUTER WINS!!!'
         }
         resetBtn.style.display = 'inline';
     }
@@ -145,8 +140,7 @@ function roundWinner() {
             computer.push(player[0], player[1], player[2], player[3]);
             player = player.slice(4);
             winnerName = 'Computer';
-            cCrown.style.visibility = 'visible';
-            pCrown.style.visibility = 'hidden';
+            banner.innerText = '';
         } else if (computer[3].points < player[3].points) {
             for (let i=0; i < 4; i++) {
                 player.push(player.shift())
@@ -154,14 +148,11 @@ function roundWinner() {
             player.push(computer[0], computer[1], computer[2], computer[3]);
             computer = computer.slice(4);
             winnerName = 'Player';
-            pCrown.style.visibility = 'visible';
-            cCrown.style.visibility = 'hidden';
+            banner.innerText = '';
         } else {
             warBtn.style.display = 'none';
             tieBtn.style.display = 'inline';
             banner.innerText = 'it`s a tie!';
-            pCrown.style.visibility = 'hidden';
-            cCrown.style.visibility = 'hidden';
         } 
     }else if (computer.length < 4) {
         let a = computer.length - 1;
@@ -172,8 +163,7 @@ function roundWinner() {
             };
             player = player.slice(4);
             winnerName = 'Computer';
-            cCrown.style.visibility = 'visible';
-            pCrown.style.visibility = 'hidden';
+            banner.innerText = 'Computer wins!'
         } else if (computer[a].points < player[3].points) {
             for (let i = 0; i < 4; i++) {
                 player.push(player.shift())
@@ -181,14 +171,11 @@ function roundWinner() {
             player.push(...computer);
             computer = [];
             winnerName = 'Player';
-            pCrown.style.visibility = 'visible';
-            cCrown.style.visibility = 'hidden';
+            banner.innerText = 'Player wins!';
         } else {
             warBtn.style.display = 'none';
             tieBtn.style.display = 'inline';
             banner.innerText = 'it`s a tie!';
-            pCrown.style.visibility = 'hidden';
-            cCrown.style.visibility = 'hidden';
         }
     }else if (player.length < 4) {
         let a = player.length - 1;
@@ -199,8 +186,7 @@ function roundWinner() {
             };
             computer = computer.slice(4);
             winnerName = 'Player';
-            pCrown.style.visibility = 'visible';
-            cCrown.style.visibility = 'hidden';
+            banner.innerText = 'Player wins!';
         } else if (player[a].points < computer[3].points) {
             for (let i = 0; i < 4; i++) {
                 computer.push(computer.shift())
@@ -208,14 +194,11 @@ function roundWinner() {
             computer.push(...player);
             player = [];
             winnerName = 'Computer';
-            cCrown.style.visibility = 'visible';
-            pCrown.style.visibility = 'hidden';
+            banner.innerText = 'Computer wins!'
         } else {
             warBtn.style.display = 'none';
             tieBtn.style.display = 'inline';
             banner.innerText = 'it`s a tie!';
-            pCrown.style.visibility = 'hidden';
-            cCrown.style.visibility = 'hidden';
         }
     }
 }
@@ -298,8 +281,6 @@ tieBtn.addEventListener('click', (e) => {
 resetBtn.addEventListener('click', (e) => {
     player = [];
     computer = [];
-    cCrown.style.visibility = 'hidden';
-    pCrown.style.visibility = 'hidden';
     cStats.innerText = 'Cards in hand: ' + computer.length;
     pStats.innerText = 'Cards in hand: ' + player.length;
     resetBtn.style.display = 'none';
@@ -310,4 +291,3 @@ resetBtn.addEventListener('click', (e) => {
     tableP.appendChild(document.createElement('div'));
     banner.innerText = 'let`s get started...';
 })
-

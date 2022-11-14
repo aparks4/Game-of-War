@@ -7,8 +7,6 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-bottom: 150px;
-    margin-top: 25px;
 }
 
 .title-section {
@@ -22,25 +20,25 @@ h1 {
     color: black;
     display: flex;
     justify-content: center;
-    margin-bottom: 0px;
-    margin-top: 2px;
-    font-size: 50px;
+    margin-bottom: 0;
+    margin-top: 1vh;
+    font-size: 3em;
 }
 
 .text-banner {
     display: flex;
     justify-content: center;
-    width: 600px;
-    height: 60px;
-    font-size: 28px;
-    margin-top: 40px;
+    width: 60vw;
+    height: 2em;
+    font-size: 1.8em;
+    margin-top: 1em;
     align-self: center;
 }
 
 .board-wrapper {
     display: flex;
     justify-content: center;
-    align-items: stretch;
+    align-items: center;
 }
 
 .cards-C, .cards-P {
@@ -62,58 +60,80 @@ h1 {
 
 .board {
     display: flex;
-    justify-content: center;
-    flex-direction: row;
+    justify-content: space-evenly;
     align-items: flex-start;
-    margin-top: 0px;
-    width: 700px;
-
+    width: 60vw;
 }
 
 .computer, .player {
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     align-self: center;
     text-align: center;
-    font-size: 23px;
-    height: 300px;
-    width: 300px;
-    margin-top: 50px;
+    font-size: 3vh;
+    height: 45vh;
+    width: 30vw;
+}
+
+#c-crown, #p-crown {
+    position: fixed;
+    width: 30vw;
+    font-size: 4.5vh;
+    z-index: 1;
+    margin-bottom: 10vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
 }
 
 .button-wrapper {
     display: flex;
     justify-content: center;
     align-content: center;
-    margin-top: 30px;
+    margin-top: 1em;
     font-family: 'Gloria Hallelujah', cursive;
 }
 
-.shuffle-button, .war-button, .tie-button, .reset-button {
+button {
     justify-content: center;
     align-self: center;
-    height: 60px;
-    width: 150px;
+    height: 3em;
+    width: 7em;
     text-align: center;
     font-family: 'Gloria Hallelujah', cursive;
     font-weight: bold;
-    font-size: 18px;
-    margin-left: 12px;
+    font-size: 1.2em;
     border-radius: 12px;
     background-color: #b2b2b2
+}
+.shuffle-button {
+    width: 10em;
+}
+.tie-button, .reset-button {
+    position: absolute;
+    right: 4vw;
+    bottom: 47vh;
+
+}
+button:hover {
+    cursor: pointer;
+    background-color: rgb(109, 117, 109, .5);
 }
 
 .stats {
     display: flex;
-    justify-content: center;  
+    justify-content: center; 
+    margin-top: 1vh; 
 }
 
 .c-stats, .p-stats {
     display: flex;
     justify-content: center;
-    font-size: 25px;
-    width: 300px;
+    font-size: 1.5em;
+    width: 10em;
+    margin-right: 1.5em;
+    margin-left: 1.5em;
 }
 
 .table-P, .table-C {
