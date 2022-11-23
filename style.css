@@ -114,7 +114,6 @@ button {
     position: absolute;
     right: 4vw;
     bottom: 47vh;
-
 }
 button:hover {
     cursor: pointer;
@@ -190,3 +189,61 @@ button:hover {
     bottom: .095em;  
 }
 
+@media (max-width: 1200px) {
+
+}
+
+@media (max-width: 768px) {
+
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 4vh;
+    }
+    h2 {
+        font-size: 3vh;
+    }
+    .text-banner {
+        text-align: center;
+        font-size: 3vh;
+    }
+    .board {
+        width: 100vw;
+        justify-content: space-between;
+        margin-top: 10vh;
+    }
+    .computer, .player {
+        margin-left: 5vw;
+        margin-right: 5vw;
+        height: 38vh;
+    }
+    #c-crown, #p-crown {
+        position: absolute;
+        font-size: 6vh;
+        bottom: 55.3vh;  
+    }
+    .tie-button, .reset-button {
+        position: absolute;
+        right: auto;
+        bottom: 33.5vh;
+    }
+    .button-wrapper {
+        margin-top: 5vh;
+    }
+    .shuffle-button {
+        align-self: flex-end;
+    }
+    .stats {
+        justify-content: space-between; 
+    }
+    .c-stats, .p-stats {
+        text-align: center;
+        font-size: 1.3em;
+        margin: .5vw;
+        width: 30vw;
+        padding-left: 4vw;
+        padding-right: 4vw;
+    }
+
+}
