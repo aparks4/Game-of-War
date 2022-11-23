@@ -220,16 +220,19 @@ button:hover {
     }
     #c-crown, #p-crown {
         position: absolute;
-        font-size: 6vh;
-        bottom: 55.3vh;  
+        font-size: 8vh;
+        bottom: 50vh;  
     }
     .tie-button, .reset-button {
         position: absolute;
         right: auto;
-        bottom: 33.5vh;
+        bottom: 28vh;
     }
     .button-wrapper {
         margin-top: 5vh;
+    }
+    button:hover {
+        background-color: #b2b2b2;
     }
     .shuffle-button {
         align-self: flex-end;
@@ -244,6 +247,9 @@ button:hover {
         width: 30vw;
         padding-left: 4vw;
         padding-right: 4vw;
+    }
+    .suit {
+        font-size: 2.5em;
     }
 
 }
