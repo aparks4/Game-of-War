@@ -227,6 +227,7 @@ button:hover {
         position: absolute;
         right: auto;
         bottom: 28vh;
+        font-size: .7em;
     }
     .button-wrapper {
         margin-top: 5vh;
